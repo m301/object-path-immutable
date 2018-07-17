@@ -152,6 +152,14 @@ function changeImmutable (dest, src, path, changeCallback) {
 }
 
 var api = {}
+
+api.get = function(dest,src,path){
+    for (var i=0, path=path.split('.'), len=path.length; i<len; i++){
+        src = src[path[i]];
+    };
+    return src; 
+}
+
 api.set = function set (dest, src, path, value) {
   if (isEmpty(path)) {
     return value
