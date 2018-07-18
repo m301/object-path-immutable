@@ -158,10 +158,9 @@ var api = {}
 
 api.get = function (dest, src, path) {
     for (var i = 0, path = path.split('.'), len = path.length; i < len; i++) {
-        src = src[path[i]];
-    }
-    ;
-    return src;
+        dest = dest[path[i]];
+    };
+    return dest;
 }
 
 api.set = function set(dest, src, path, value) {
